@@ -2,7 +2,7 @@
 
 include "passwordLib.php";
 
-/**
+/*
  * Validate Login function
  *
  * @param $id        - user ID
@@ -13,7 +13,7 @@ function validatelogin($id,$password) {
    global $conn;
    // Build an SQL statment that will return a record with a matching id
    $sql = "select * from student where studentid='$id';";
-	//echo $sql;
+	echo $sql;
    $loginresult = mysqli_query($conn, $sql);
    $studentdetails = mysqli_fetch_assoc($loginresult);
 	//print_r($studentdetails);
