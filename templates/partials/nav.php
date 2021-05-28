@@ -1,5 +1,5 @@
 
-<div id="main-nav">
+<div class="main-nav">
 
    <a href="modules.php">My Modules</a> |
    <a href="assignmodule.php">Assign Module</a> |

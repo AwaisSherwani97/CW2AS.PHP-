@@ -20,7 +20,7 @@ if (isset($_SESSION['id'])) {
        while($row = mysqli_fetch_assoc($result)) {
   	  //echo "'$row[firstname]'&nbsp;'$row[lastname]'&nbsp;'$row[dob]'</br>";
 	  // prepare page content
-      $data['content'] .= "<form action='_includes/delete.php' method='POST'><table border='1'>";
+      $data['content'] .= "<form action='_includes/delete.php' method='POST'><table class='Stu_class' border='5'>";
       $data['content'] .= "<tr><th colspan='6' align='center'>  students  </th></tr>";
       $data['content'] .= "<tr><th>Photo</th><th>FirstName</th><th>Lastname</th><th>dob</th><th>House</th><th>Town</th><th>County</th><th>Country</th><th>Postcode</th><th>select</th></tr>";
       // Display the modules within the html table
