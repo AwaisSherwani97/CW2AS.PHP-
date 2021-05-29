@@ -14,18 +14,19 @@
       // Build SQL statment that selects a student's modules
       $sql = "select * from studentmodules sm, module m where m.modulecode = sm.modulecode and sm.studentid = '" . $_SESSION['id'] ."';";
 
+
       $result = mysqli_query($conn,$sql);
 
       // prepare page content
-      $data['content'] .= "<table border='1'>";
-      $data['content'] .= "<tr><th colspan='5' align='center'>Modules</th></tr>";
-      $data['content'] .= "<tr><th>Code</th><th>Type</th><th>Level</th></tr>";
+      $data['content'] .= "<h2>Modules</h2><table class='table table-striped'>";
+      $data['content'] .= "<thead>";
+      $data['content'] .= "<tr><th>Code</th><th>Type</th><th>Level</th></tr></thead><tbody>";
       // Display the modules within the html table
       while($row = mysqli_fetch_array($result)) {
          $data['content'] .= "<tr><td> $row[modulecode] </td><td> $row[name] </td>";
          $data['content'] .= "<td> $row[level] </td></tr>";
       }
-      $data['content'] .= "</table>";
+      $data['content'] .= "</tboday></table>";
 
       // render the template
       echo template("templates/default.php", $data);
