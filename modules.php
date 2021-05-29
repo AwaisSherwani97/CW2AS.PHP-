@@ -12,10 +12,18 @@
       echo template("templates/partials/nav.php");
 
       // Build SQL statment that selects a student's modules
-      $sql = "select * from studentmodules sm, module m where m.modulecode = sm.modulecode and sm.studentid = '" . $_SESSION['id'] ."';";
+      //$sql = "select * from studentmodules sm, module m where m.modulecode = sm.modulecode and sm.studentid = '" . $_SESSION['id'] ."';";
+
+$stmt = $conn->prepare('select * from studentmodules sm, module m where m.modulecode = sm.modulecode and sm.studentid = ?'); $stmt->bind_param('i', $_SESSION['id']);// 'i' specifies the variable type => 'integer'
+$stmt->execute(); 
+$result = $stmt->get_result();
+//while ($row = $result->fetch_assoc()) {
+     // Do something with $row
+//}
 
 
-      $result = mysqli_query($conn,$sql);
+
+      //$result = mysqli_query($conn,$sql);
 
       // prepare page content
       $data['content'] .= "<h2>Modules</h2><table class='table table-striped'>";
