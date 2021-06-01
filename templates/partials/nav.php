@@ -10,7 +10,7 @@
       <a class="nav-link" href="assignmodule.php">Assign Module</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="assignmodule.php">My Details</a>
+      <a class="nav-link" href="details.php">My Details</a>
     </li>
 	<li class="nav-item">
       <a class="nav-link" href="students.php">Students List</a>
